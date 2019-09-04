@@ -4,14 +4,14 @@ public class Word {
 
     //Constructor
 
-    public Word() {};                                                               //Initialize
+    public Word() {};                                                               //default constructor
 
-    public Word(String word_target, String word_explain) {                          //Initialize with 2 element
+    public Word(String word_target, String word_explain) {                          //constructor with 2 element
         this.word_target = word_target;
         this.word_explain = word_explain;
     }
 
-    public Word(String lineInFile){                                                 //Initialize by 1 line in file
+    public Word(String lineInFile){                                                 //constructor by 1 line in file
         this.word_target = lineInFile. substring(0, lineInFile.indexOf("\t"));
         this.word_explain = lineInFile. substring(lineInFile.indexOf("\t") + 1);
     }
