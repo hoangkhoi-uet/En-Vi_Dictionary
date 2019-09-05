@@ -1,0 +1,10 @@
+﻿hello	xin chào
+world	thế giới
+exception	ngoại lệ
+initialize	khởi tạo
+computer	máy tính
+numerator	tử số
+denominator	mẫu số
+fraction	phân số
+
+
