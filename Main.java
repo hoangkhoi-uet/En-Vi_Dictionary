@@ -1,6 +1,11 @@
 public class Main {
     public static void main(String []args){
-        DictionaryCommandline test = new DictionaryCommandline();
-        test.dictionaryBasic();
+        //Basic
+        /*DictionaryCommandline test = new DictionaryCommandline();
+        test.dictionaryBasic();*/
+
+        //Advanced
+        DictionaryCommandline test = new DictionaryCommandline();                       //Initialize
+        test.dictionaryAdvanced();                                                      //Call to function
     }
 }
