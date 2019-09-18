@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Dictionary {
-    static ArrayList<Word> dictionary = new ArrayList<Word>();                          //Initialize dictionary by arraylist
+    static ArrayList<Word> dictionary = new ArrayList<Word>();                  //Initialize dictionary by arraylist
 
     //Get and set function
 

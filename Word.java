@@ -1,8 +1,8 @@
 public class Word {
-    private String word_target;
-    private String word_explain;
+    private String word_target;                      //Attribute
+    private String word_explain;                     //Attribute
 
-    //Function initialize word
+    //Constructor
 
     public Word() {};                                                               //Initialize
 
@@ -12,8 +12,8 @@ public class Word {
     }
 
     public Word(String lineInFile){                                                 //Initialize by 1 line in file
-        this.word_target = lineInFile.substring(0, lineInFile.indexOf("\t"));
-        this.word_explain = lineInFile.substring(lineInFile.indexOf("\t") + 1);
+        this.word_target = lineInFile. substring(0, lineInFile.indexOf("\t"));
+        this.word_explain = lineInFile. substring(lineInFile.indexOf("\t") + 1);
     }
 
     //Get and set function
@@ -33,4 +33,6 @@ public class Word {
     public void setWord_explain(String word_explain) {
         this.word_explain = word_explain;
     }
+
 }
+
