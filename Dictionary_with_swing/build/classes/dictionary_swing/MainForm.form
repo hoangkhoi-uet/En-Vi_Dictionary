@@ -80,7 +80,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="1" min="-2" max="-2" attributes="0"/>
+          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -88,7 +88,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="99" green="ff" red="cc" type="rgb"/>
         </Property>
       </Properties>
 
@@ -98,6 +98,12 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabel1" min="-2" pref="77" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="searchField" min="-2" pref="364" max="-2" attributes="0"/>
+                          <EmptySpace min="78" pref="270" max="32767" attributes="0"/>
+                      </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                           <Component id="jLabel4" min="-2" pref="32" max="-2" attributes="0"/>
@@ -108,30 +114,18 @@
                           <EmptySpace min="-2" pref="167" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
+                          <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel1" min="-2" pref="77" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="searchField" min="-2" pref="364" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="translateParagraph" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="add" max="32767" attributes="0"/>
+                                  <Component id="deleteButton" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="replace" alignment="0" max="32767" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="jScrollPane1" pref="215" max="32767" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="add" max="32767" attributes="0"/>
-                                          <Component id="deleteButton" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="replace" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="refresh" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Component id="speak" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane2" min="-2" pref="372" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="refresh" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jScrollPane2" min="-2" pref="372" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -147,18 +141,13 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel1" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                          <Component id="searchField" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="translateParagraph" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel1" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="searchField" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
-                          <Component id="speak" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
                           <Component id="deleteButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="add" min="-2" max="-2" attributes="0"/>
@@ -206,6 +195,9 @@
           <SubComponents>
             <Component class="javax.swing.JList" name="listView">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="cc" red="cc" type="rgb"/>
+                </Property>
                 <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                   <StringArray count="0"/>
                 </Property>
@@ -228,6 +220,9 @@
           <SubComponents>
             <Component class="javax.swing.JTextArea" name="explainArea">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="cc" red="cc" type="rgb"/>
+                </Property>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
               </Properties>
@@ -237,7 +232,7 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="ff" red="ff" type="rgb"/>
+              <Color blue="0" green="99" red="ff" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="1"/>
@@ -333,25 +328,6 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="refreshMouseClicked"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="translateParagraph">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Dell\Desktop\OOP\Dictionary_Swing\image\ShowImage.png"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="D&#x1ecb;ch &#x111;o&#x1ea1;n v&#x103;n"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="translateParagraphMouseClicked"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="speak">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Ph&#xe1;t &#xe2;m"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="speakActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

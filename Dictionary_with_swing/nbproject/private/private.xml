@@ -3,7 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/hoang/Downloads/assignment-1-dictionary-long-khoi-master/Dictionary_Swing/src/dictionary_swing/MainForm.java</file>
+            <file>file:/C:/Users/Dell/Desktop/OOP/Dictionary_Swing/src/dictionary_swing/Word.java</file>
+            <file>file:/C:/Users/Dell/Desktop/OOP/Dictionary_Swing/src/dictionary_swing/GoogleTranslate.java</file>
+            <file>file:/C:/Users/Dell/Desktop/OOP/Dictionary_Swing/src/dictionary_swing/AddWordDialog.java</file>
+            <file>file:/C:/Users/Dell/Desktop/OOP/Dictionary_Swing/src/dictionary_swing/ReplaceWordDialog.java</file>
+            <file>file:/C:/Users/Dell/Desktop/OOP/Dictionary_Swing/src/dictionary_swing/MainForm.java</file>
+            <file>file:/C:/Users/Dell/Desktop/OOP/Dictionary_Swing/src/dictionary_swing/Dictionary.java</file>
+            <file>file:/C:/Users/Dell/Desktop/OOP/Dictionary_Swing/src/dictionary_swing/UseTranslate.java</file>
         </group>
     </open-files>
 </project-private>
