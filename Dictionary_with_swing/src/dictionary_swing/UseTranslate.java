@@ -11,7 +11,6 @@ import static dictionary_swing.MainForm.VOICENAME;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -45,8 +44,8 @@ public class UseTranslate extends javax.swing.JFrame {
         englishParagraph = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         vietnamese = new javax.swing.JTextArea();
-        speak = new javax.swing.JButton();
-        translate = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         exit = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -66,17 +65,17 @@ public class UseTranslate extends javax.swing.JFrame {
         vietnamese.setRows(5);
         jScrollPane2.setViewportView(vietnamese);
 
-        speak.setText("Đọc");
-        speak.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButton1.setText("Đọc");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                speakMouseClicked(evt);
+                jButton1MouseClicked(evt);
             }
         });
 
-        translate.setText("Dịch");
-        translate.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButton2.setText("Dịch");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                translateMouseClicked(evt);
+                jButton2MouseClicked(evt);
             }
         });
 
@@ -103,11 +102,11 @@ public class UseTranslate extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 287, Short.MAX_VALUE)
-                            .addComponent(translate, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(speak, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jScrollPane2)
                         .addComponent(jScrollPane1)))
                 .addContainerGap(23, Short.MAX_VALUE))
@@ -117,13 +116,13 @@ public class UseTranslate extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(speak)
+                    .addComponent(jButton1)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(translate)
+                    .addComponent(jButton2)
                     .addComponent(jLabel2))
                 .addGap(33, 33, 33)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -144,33 +143,32 @@ public class UseTranslate extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_englishParagraphKeyReleased
 
-    private void translateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_translateMouseClicked
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         String englishParagraph = this.englishParagraph.getText();
         try {
             this.vietnamese.setText(GoogleTranslate.translate(englishParagraph));
         } catch (IOException ex) {
             Logger.getLogger(UseTranslate.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_translateMouseClicked
+    }//GEN-LAST:event_jButton2MouseClicked
 
     private void exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseClicked
         this.dispose();
     }//GEN-LAST:event_exitMouseClicked
     public static final String VOICENAME = "kevin16";
-    private void speakMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_speakMouseClicked
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         String englishParagraph = this.englishParagraph.getText();
         Voice voice;
         VoiceManager vm = VoiceManager.getInstance();
         voice = vm.getVoice(VOICENAME);
-
+        
         voice.allocate();
         try {
             voice.speak(englishParagraph);
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-    }//GEN-LAST:event_speakMouseClicked
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -210,12 +208,12 @@ public class UseTranslate extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea englishParagraph;
     private javax.swing.JButton exit;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JButton speak;
-    private javax.swing.JButton translate;
     private javax.swing.JTextArea vietnamese;
     // End of variables declaration//GEN-END:variables
 }

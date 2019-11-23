@@ -8,7 +8,6 @@ package dictionary_swing;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import com.sun.speech.freetts.*;
-
 /**
  *
  * @author Dell
@@ -28,7 +27,7 @@ public class MainForm extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         setTitle("Dictionary");                     //Title
         showAllWords();                             //Show list 
-
+        
         explainArea.setWrapStyleWord(true);
         explainArea.setLineWrap(true);
     }
@@ -40,7 +39,6 @@ public class MainForm extends javax.swing.JFrame {
         }
         listView.setModel(dlm);
     }
-
     /**
      * remove from list and text area
      */
@@ -305,24 +303,20 @@ public class MainForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchFieldKeyReleased
+        removeAllWords();
+        dlm.addElement(null);
+        String searchField = this.searchField.getText().toLowerCase();
+        for (int i = 0; i < Dictionary.dictionary.size(); i++) {
+            if (Dictionary.dictionary.get(i).getWord_target().startsWith(searchField)) {
+                dlm.addElement(Dictionary.dictionary.get(i).getWord_target());
+            }
+        }
+        listView.setModel(dlm);
         if (searchField.equals("")) {
             removeAllWords();
             showAllWords();
-        } else {
-            removeAllWords();
-            dlm.addElement(null);
-            String searchField = this.searchField.getText().toLowerCase();
-            int sizeOf = Dictionary.dictionary.size();
-            for (int i = 0; i < sizeOf; i++) {
-                if (Dictionary.dictionary.get(i).getWord_target().startsWith(searchField)) {
-                    dlm.addElement(Dictionary.dictionary.get(i).getWord_target());
-                    if ((i + 1 == sizeOf) || (Dictionary.dictionary.get(i + 1).getWord_target().startsWith(searchField) == false)) {
-                        break;
-                    }
-                }
-            }
-            listView.setModel(dlm);          
         }
+
     }//GEN-LAST:event_searchFieldKeyReleased
 
     private void listViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listViewMouseClicked
@@ -332,8 +326,7 @@ public class MainForm extends javax.swing.JFrame {
     }//GEN-LAST:event_listViewMouseClicked
     /**
      * Delete button
-     *
-     * @param evt
+     * @param evt 
      */
     private void deleteButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteButtonMouseClicked
         String selectedWord = listView.getSelectedValue();          //Pick up by mouse
@@ -342,7 +335,6 @@ public class MainForm extends javax.swing.JFrame {
         } else {
             int i = binarySearch(selectedWord);
             String deleteWord = Dictionary.dictionary.get(i).getWord_target();
-
             //Show dialog and process
             int choose = JOptionPane.showConfirmDialog(rootPane, "Bạn chắc chắn muốn xóa từ \"" + deleteWord + "\"?");
             if (choose == JOptionPane.YES_OPTION) {
@@ -355,16 +347,14 @@ public class MainForm extends javax.swing.JFrame {
     }//GEN-LAST:event_deleteButtonMouseClicked
     /**
      * add button
-     *
-     * @param evt
+     * @param evt 
      */
     private void addMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseClicked
         new AddWordDialog().setVisible(true);     //change to add word function
     }//GEN-LAST:event_addMouseClicked
     /**
      * replace word button
-     *
-     * @param evt
+     * @param evt 
      */
     private void replaceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_replaceMouseClicked
         wordNeedReplacing = listView.getSelectedValue();    //Add selected word by mouse
@@ -376,8 +366,7 @@ public class MainForm extends javax.swing.JFrame {
     }//GEN-LAST:event_replaceMouseClicked
     /**
      * exit button
-     *
-     * @param evt
+     * @param evt 
      */
     private void ExitProgramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitProgramActionPerformed
         int choose = JOptionPane.showConfirmDialog(rootPane, "Bạn chắc chắn muốn thoát?");
@@ -413,36 +402,30 @@ public class MainForm extends javax.swing.JFrame {
     public static final String VOICENAME = "kevin16";
     private void speakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_speakActionPerformed
         String wordNeedSpeaking = listView.getSelectedValue();
-        if (wordNeedSpeaking == null) {
-            JOptionPane.showMessageDialog(rootPane, "Chưa chọn từ nào!");
-        } else {            
-            Voice voice;
-            VoiceManager vm = VoiceManager.getInstance();
-            voice = vm.getVoice(VOICENAME);
-
-            voice.allocate();
-            try {
-                voice.speak(wordNeedSpeaking);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        Voice voice;
+        VoiceManager vm = VoiceManager.getInstance();
+        voice = vm.getVoice(VOICENAME);
+        
+        voice.allocate();
+        try {
+            voice.speak(wordNeedSpeaking);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_speakActionPerformed
     /**
      * Binary search return position of word
-     *
      * @param needingSearch
-     * @return
+     * @return 
      */
     public static int binarySearch(String needingSearch) {
         int left = 0;
         int right = Dictionary.dictionary.size() - 1;
         while (left <= right) {
             int mid = (left + right) / 2;
-            String temp = Dictionary.dictionary.get(mid).getWord_target();
-            if (temp.compareTo(needingSearch) == 0) {
+            if (Dictionary.dictionary.get(mid).getWord_target().compareTo(needingSearch) == 0) {
                 return mid;
-            } else if (temp.compareTo(needingSearch) < 0) {
+            } else if (Dictionary.dictionary.get(mid).getWord_target().compareTo(needingSearch) < 0) {
                 left = mid + 1;
             } else {
                 right = mid - 1;
@@ -465,24 +448,16 @@ public class MainForm extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 

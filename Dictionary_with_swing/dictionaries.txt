@@ -1,7 +1,9 @@
 a boy	con trai
+a dog	con chó
 a girl	con gái
+a little	một chút
 a-frame (construction)	khung chữ a (kết cấu)
-abadon	bỏ, từ bỏ
+abandon	bỏ, từ bỏ
 abandoned	bị bỏ rơi, bị ruồng bỏ
 ability	khả năng, năng lực
 able	có năng lực, có tài
@@ -14,6 +16,7 @@ absent	vắng mặt, nghỉ
 absolute	tuyệt đối, hoàn toàn
 absolutely	tuyệt đối, hoàn toàn
 absorb	thu hút, hấp thu, lôi cuốn
+absorption test	sự thử lực hấp thu 
 abuse	lộng hành, lạm dụng
 abutment	tường chống, chân vòm; mố cầu
 academic	thuộc học viện, đh, viện hàn lâm
@@ -4065,7 +4068,7 @@ tax 	thuế
 taxi	xe tắc xi
 tea	cây chè, trà, chè
 teach	dạy
-teacher	uet
+teacher	giáo viên
 teaching	sự dạy, công việc dạy học
 team	đội, nhóm
 tear	xé, làm rắch; chỗ rách, miếng xe; nước mắt
@@ -4289,8 +4292,7 @@ type	loại, kiểu, mẫu; phân loại, xếp loại
 typical	tiêu biểu, điển hình, đặc trưng
 typically	điển hình, tiêu biểu
 tyre	lốp, vỏ xe
-uet	đại học công nghệ - university of engineering and technology
-uett	avvarg
+uet	đại học công nghệ
 ugly	xấu xí, xấu xa
 ultimate	cuối cùng, sau cùng
 ultimate bending strength 	giới hạn bền uốn
@@ -4460,7 +4462,6 @@ vision	sự nhìn, thị lực
 visit	đi thăm hỏi, đến chơi, tham quan; sự đi thăm, sự thăm viếng
 visitor	khách, du khách
 vital	sự sống, cần cho sự sống
-vnu	vietnam national university
 vocabulary	từ vựng
 voice	tiếng, giọng nói
 volume	thế tích, quyển, tập
