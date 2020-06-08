@@ -9,3 +9,4 @@ There are 2 version of dictionary:
 + Dictionary with swing version:
   Use java swing to build graphic.
   Build with Netbeans IDE.
+  New features: Google translate API
